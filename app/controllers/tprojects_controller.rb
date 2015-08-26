@@ -25,7 +25,7 @@ class TprojectsController < ProjectsController
 
         @projects = Project.find_by_sql("
             SELECT * FROM projects AS p
-            LEFT JOIN (SELECT cv.value AS IOS,cv.customized_id FROM custom_fields as cf LEFT JOIN custom_values AS cv ON cv.custom_field_id = cf.id WHERE cf.name = 'IOS') AS ios ON ios.customized_id = p.id
+            LEFT JOIN (SELECT cv.value AS ios,cv.customized_id FROM custom_fields as cf LEFT JOIN custom_values AS cv ON cv.custom_field_id = cf.id WHERE cf.name = 'IOS') AS ios ON ios.customized_id = p.id
             LEFT JOIN (SELECT cv.value AS Android,cv.customized_id FROM custom_fields as cf LEFT JOIN custom_values AS cv ON cv.custom_field_id = cf.id WHERE cf.name = 'Android') AS android ON android.customized_id = p.id
             #{@filter_name} GROUP BY p.id #{@ordering} #{@limit_q} #{@offset_q}
           ")
