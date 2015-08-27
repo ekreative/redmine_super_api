@@ -1,8 +1,10 @@
 = testbuildrocks
 
     GET /testbuildrocks/projects.(json|xml)
+    
+    Parameters: name, ordering, page, limit, offset
 
-    Response
+    Response:
 
     {
       "projects": [
