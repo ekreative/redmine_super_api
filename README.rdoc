@@ -1,10 +1,17 @@
 = testbuildrocks
 
-    GET /testbuildrocks/projects.(json|xml)
-    
-    Parameters: name, ordering, page, limit, offset
+For installing the plugin use the command:
+    rake redmine:plugins:migrate
 
-    Response:
+and for uninstalling it:
+    rake redmine:plugins:migrate NAME=testbuildrocks VERSION=0
+
+
+GET /testbuildrocks/projects.(json|xml)
+    
+Parameters: name, ordering, page, limit, offset
+
+Response:
 
     {
       "projects": [
