@@ -1,13 +1,13 @@
-= testbuildrocks
+= Super API Plugin
 
 For installing the plugin use the command:
     rake redmine:plugins:migrate
 
 and for uninstalling it:
-    rake redmine:plugins:migrate NAME=testbuildrocks VERSION=0
+    rake redmine:plugins:migrate NAME=redmine_super_api VERSION=0
 
 
-GET /testbuildrocks/projects.(json|xml)
+GET /projects.(json|xml)
     
 Parameters: name, ordering, page, limit, offset
 
@@ -24,7 +24,7 @@ Response:
           "custom_fields": [
             {
               "id": 1,
-              "name": "IOS",
+              "name": "iOS",
               "value": "1"
             },
             {
